@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/index.css/home.css" />
+  </head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+  </style>
+  <body>
+      <nav id="navbar">
+        <div class="calorify">CaloriFyMe!</div>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li class="diet-plan">
+            <a href="/index.html/home.html">Diet Plans</a>
+            <ul class="dropdown">
+              <li><a href="/index.html/weight-loss.html">Lose Weight</a></li>
+              <li><a href="/index.html/weight-gain.html">Gain Weight</a></li>
+              <li><a href="/index.html/stay-fit.html">Stay Fit</a></li>
+            </ul>
+          <li><a href="/index.html/4page.html">Honours</a></li>
+          <li><a href="/index.html/5page.html">Tools</a></li>
+        </ul>
+      </nav>
+
+
+    <section id="home">
+      <div class="carousel">
+        <div class="carousel-track">
+          <img src="/img/move1.jpg" alt="Image 1">
+          <img src="/img/move2.jpg" alt="Image 2">
+          <img src="/img/move3.jpg" alt="Image 3">
+          <img src="/img/move4.jpg" alt="Image 4">
+        </div>
+      </div>
+    </section>
+
+  
+
+    <section id="api" >
+    <h1>NUTRITION INFORMATION</h1>
+    <div class="Nutrition">
+      <label>Enter weight in Grams(g) or Pounds(lb) for solid food e.g. 200g ricebowl (1 lb = 454g) <br> <br>
+            Enter weight in Ounces(oz) for liquid food e.g. 16 oz of water. (1 cup = 8 oz) <br> <br>
+            </label>
+      <input type="text" id="searchBar" placeholder="Enter what you ate? e.g., 5 eggs">
+    </div>
+    <button id="getNutrition" class="btn">Get Nutrition</button>
+    <div class="table-container">
+      <table id="nutritionTable" style="display:none;">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Serving Size (g)</th>
+                <th>Calories (kcal)</th>
+                <th>Fat (g)</th>
+                <th>Cholesterol (mg)</th>
+                <th>Sodium (mg)</th>
+                <th>Carbohydrates (g)</th>
+                <th>Fiber (g)</th>
+                <th>Sugar (g)</th>
+                <th>Protein (g)</th>
+            </tr>
+        </thead>
+        <tbody id="nutritionData"></tbody>
+    </table>
+  </div>
+    </section>
+
+    <script defer src="/index.js/home.js"></script>
+  </body>
+</html>
