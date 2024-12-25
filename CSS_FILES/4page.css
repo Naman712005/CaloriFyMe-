@@ -1,0 +1,305 @@
+
+
+
+header p {
+    animation-delay: 0.5s;
+}
+
+/* Existing styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(12, 12, 12);
+    height: 100vh;
+}
+
+header {
+    position: relative;
+    text-align: center;
+    padding: 50px 20px;
+    color: white;
+    height: 180px;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/img/header.jpg') no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.5; 
+    z-index: -1; 
+}
+
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); 
+    }
+}
+
+header h1, header p {
+    animation: slideInFromLeft 1s ease-out;
+    opacity: 0; 
+    animation-fill-mode: forwards; 
+}
+
+
+header p {
+    animation-delay: 0.5s;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+}
+
+.honors-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 50px;
+    gap: 30px;
+    opacity: 0;
+    transform: translateY(100px);
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+
+
+.honor-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 250px;
+    text-align: center;
+    padding: 20px;
+    background: url("/img/personbackground.png") ;
+    opacity: 0;
+    animation: slideUp 1s ease-in-out forwards;
+    border: 2px solid #aca9a9;
+}
+
+.honor-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); 
+    z-index: 0; 
+}
+
+.honor-card * {
+    position: relative;
+    z-index: 1;
+}
+
+
+.honor-card:nth-child(1) {
+    animation-delay: 0s;
+}
+.honor-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+.honor-card:nth-child(3) {
+    animation-delay: 0.8s;
+}
+.honor-card:nth-child(4) {
+    animation-delay: 1s;
+}
+
+
+@keyframes slideUp{
+    from {
+        opacity: 0;
+        transform: translateY(200px); 
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+
+
+.honor-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 5px solid #333;
+}
+
+.honor-card h2 {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    color: #eeeeee;
+}
+
+.honor-card p {
+    font-size: 1.04rem;
+    color:#eeeeee;
+    margin: 10px 0;
+}
+
+
+.social-icons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+
+.social-icons a {
+    color: white;
+    font-size: 1.7rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a.insta:hover {
+    color: #c13584;
+}
+
+.social-icons a.linkedin:hover {
+    color: #0077b5;
+}
+footer {
+    background: url("/img/header.jpg");
+    height: 40px;
+    position: relative;
+    bottom: -221px;
+}
+
+/* Sidebar styling */
+.sidebar {
+    position: fixed;
+    left: 50%;
+    top: 76%;
+    background-color: black;
+    border-radius: 50%;
+    width: 60px; 
+    height: 60px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; 
+}
+
+.sidebar ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;  
+}
+
+.sidebar a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 60px; 
+    height: 60px; 
+    border-radius: 50%; 
+    background: rgb(26, 26, 26);
+    color: #fff; 
+    font-size: 24px; 
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    --line-color: #fff; 
+    transition: --line-color 0.3s ease; 
+}
+
+.sidebar p{
+    color: white;
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.animated-btn::after, .animated-btn::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), transparent 0%, var(--line-color));
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 50%; 
+    animation: spin 3s linear infinite;
+}
+
+.animated-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 60px; 
+    height: 60px;
+    border-radius: 50%; 
+    background: rgb(26, 26, 26);
+    color: #fff;
+    font-size: 24px; 
+    text-decoration: none; 
+    border: none;
+    cursor: pointer;
+    --line-color: #ee2222;
+    transition: --line-color 0.3s ease;
+}
+
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
+}
+
+.animated-btn::before {
+    filter: blur(1.5rem);
+    opacity: 0.6;
+}
+
+.animated-btn:hover {
+    --line-color: #ee2222;
+}
+

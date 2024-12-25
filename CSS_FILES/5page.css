@@ -1,0 +1,65 @@
+/* Black and Red Neon Theme */
+body {
+    margin: 0;
+    padding: 0;
+
+    background-color: #000; /* Black background */
+    color: #fff; /* Default text in white */
+}
+
+:root{
+    --primary-color: #ee2222;
+}
+
+h1, h3 {
+    text-align: center;
+    color: var(--primary-color); /* Neon red for headers */
+    font-family: "Montserrat", sans-serif;
+  
+}
+
+
+ol {
+    margin: 20px auto;
+    padding: 10px;
+    max-width: 600px;
+    background: #1a1a1a;
+    border-radius: 10px;
+    list-style-position: inside;
+    box-shadow: 0px 4px 20px rgba(255,0,0,0.2);
+    animation: glow 3s infinite;
+}
+@keyframes glow{
+    0%{ 
+        box-shadow: 0 0 5px rgba(255,0,0,0.2);
+
+    }
+    50%{
+        box-shadow: 0 0 20px rgba(255,0,0,0.4);
+    }
+    100%{
+        box-shadow: 0 0 5px rgba(255,0,0,0.2);
+    }
+}
+
+ol li {
+    margin: 10px 0;
+    color: #fff;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+}
+
+/* a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary-color);
+    text-shadow: 0 0 15px #ff9999;
+} */
+
+h3 {
+    margin-top: 40px;
+    text-transform: uppercase;
+}
